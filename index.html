@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hana Gharrad - Personal Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Proxima Nova', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            position: fixed;
+            top:0px;
+            width: 18%;
+            left: 0px;
+            background-color: #ffffff;
+            padding: 30px;
+            height: 100vh;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .sidebar h3 {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .sidebar p {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .sidebar ul li {
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .sidebar ul li a {
+            color: #007bff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 15px;
+            background-color: #d5e6f9;
+            color: #3329ed;
+            border-radius: 50%;
+            padding: 12px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        .sidebar ul li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #328ae8;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="https://media.licdn.com/dms/image/v2/C4D03AQEkptUeAeZ5fw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1662228758453?e=1732147200&v=beta&t=NQVC0Vu5ctBizXBOOoRLKy04fySaxO9QwlLCAr8jlVU" alt="Profile Image" class="profile-img">
+        <h3 class="text-center">Hana Gharrad</h3>
+        <p class="text-center">Data Scientist & Software Engineer & Urban Mobility Researcher</p>
+        <p>hana.gharrad@gmail.com</p>
+        <ul>
+            <li><a href="#bio"><i class="fas fa-info-circle"></i> Bio</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#projects"><i class="fas fa-project-diagram"></i> Research Projects</a></li>
+            <li><a href="#publications"><i class="fas fa-book"></i> Publications</a></li>
+            <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- About Section -->
+        <div id="bio">
+            <h3 class="section-title">About</h3>
+            <p>Hello, I'm Hana Gharrad, a passionate data scientist and software engineer with a deep interest in urban mobility and smart cities. My research and work span various domains, including data analysis, machine learning, IoT, Multi-agent Systems, Mobility Simulation and transportation systems.</p>
+            Currently I'm researcher at the Transportation Research Institute (IMOB) UHasselt Belgium working on my doctoral thesis in drone’s collaboration for smart cities applications. I'm a member of Transportation Behavior research group. I was a reseach assistant at German University of Technology in Oman. I hold a master degree in Statistics and Data Scince from Data Science Institure (DSI), UHasselt , Belgium and a software engineer degree from Higher Institute of Applied Sciences and Technologies, Tunisia. My research interest includes Data Analsyis, Machine learning, Artificial Intelligence (AI) Multi-Agent Systems, Self-Organization and Drone Collaboration, Transportation, IoT and Smart Cities.  
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="mt-5">
+            <h3 class="section-title">Skills</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Programming:</strong> JAVA, PHP, Python, C++, R</li>
+                <li class="list-group-item"><strong>Frameworks:</strong> Hibernate, Spring, AngularJS, Bootstrap</li>
+                <li class="list-group-item"><strong>AI & ML:</strong> TensorFlow, PyTorch, Graph Neural Networks</li>
+                <li class="list-group-item"><strong>Web:</strong> HTML5, CSS3, JavaScript, Node.js</li>
+                <li class="list-group-item"><strong>Database:</strong> Oracle, MySQL, MongoDB, Neo4j</li>
+            </ul>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education" class="mt-5">
+            <h3 class="section-title">Education</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Ph.D. Researcher, IMOB, UHasselt</strong> (2019 - Present) - Multi-Level and Multi-Dimensional Internet of Drones Collaboration Approach
+                    for Smart City Applications.</li>
+                <li class="list-group-item"><strong>Master in Statistics and Data Science</strong>, UHasselt (2022)</li>
+                <li class="list-group-item"><strong>National Engineering Diploma, Software Engineering</strong>, Higher Institute of Applied Science and Technology of Sousse, Tunisia (2014)</li>
+                <li class="list-group-item"><strong>Data Science Specialization</strong>, Coursera Certifications (2020-2021)</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experience" class="mt-5">
+            <h3 class="section-title">Experience</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Senior Researcher, Transportation Research Institute, IMOB, UHasselt</strong> (2024)</li>
+                <li class="list-group-item"><strong>Research Assistant, German University of Technology in Oman</strong> (2022-2024)</li>
+                <li class="list-group-item"><strong>Research Assistant, IMOB, UHasselt</strong> (2021-2022)</li>
+                <li class="list-group-item"><strong>Teaching and Research Assistant, German University of Technology in Oman</strong> (2019-2020)</li>
+                <li class="list-group-item"><strong>Freelancer</strong> - Web and Mobile Developer (Ongoing)</li>
+            </ul>
+        </div>
+
+        <!-- Research Projects Section -->
+        <div id="projects" class="mt-5">
+            <h3 class="section-title">Research Projects</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>2020</strong> Search and Rescue: Emerging technologies for early location of entrapped victims and
+                    advanced wearables for risk assessment and first responders’ safety in SAR operations</li>
+                <li class="list-group-item"><strong>2021</strong> Smart Water Meters IoT platform for water consumption in Oman, in collaboration with
+                    MOMKIN</li>
+                <li class="list-group-item"><strong>2020</strong> Flames Summer School 2020 (Multilevel Analysis, Introduction to Machine Learning, Time
+                    Series Analysis)</li>
+                <li class="list-group-item"><strong>2017</strong> Internet of Things Boot Camp, Google Developer Group Muscat</li>
+              
+            
+            </ul>
+        </div>
+
+        <!-- Publications Section -->
+        <div id="publications" class="mt-5">
+            <h3 class="section-title">Publications</h3>
+            <ul class="list-group">
+                    <li class="list-group-item"><strong>Smart Mobility and Logistics Ecosystems (2024):</strong> Simulating Collaborative and Autonomous Persistent Surveillance by Drones for Search and Rescue Operations</li>
+                    <li class="list-group-item"><strong>Personal and Ubiquitous Computing (2023):</strong> An intelligent divide-and-conquer approach for driving style management</li>
+                    <li class="list-group-item"><strong>Sensors (2022):</strong> Hierarchical Analysis Process for Belief Management in Internet of Drones</li>
+                    <li class="list-group-item"><strong>International Journal of Disaster Risk Science (2022):</strong> A Proposed Methodological Approach for Considering Community Resilience in Technology Development and Disaster Management Pilot Testing</li>
+                    <li class="list-group-item"><strong>Computing and Informatics (2022):</strong> A Connected Mobility Scheme for Taxi Supply-Demand Balancing in a Smart City Context</li>
+                    <li class="list-group-item"><strong>Computing and Informatics (2022):</strong> Smart Water Management Using Intelligent Digital Twins</li>
+                    <li class="list-group-item"><strong>Computer Networks (2021):</strong> A Five-Step Drone Collaborative Planning Approach for Management of Distributed Spatial Events and Vehicle Notification Using Multi-Agent Systems and Firefly Algorithms</li>
+                    <li class="list-group-item"><strong>Front. Built Environ (2021):</strong> Towards an Intelligent Driving Behavior Adjustment Based on Personalized Policies Within the Context of Connected Vehicle</li>
+                    <li class="list-group-item"><strong>Future Technologies Conference (FTC 2021):</strong> Enabling Drones Collaboration in ITS Applications Using a BDI Architecture Based on a 5-Dimensional Framework</li>
+                    <li class="list-group-item"><strong>Emerging Ubiquitous Systems and Pervasive Networks (EUSPN 2021):</strong> Vehicular Data Offloading by Road-Side Units Using Intelligent Software Defined Network</li>
+                    <li class="list-group-item"><strong>Ambient Systems, Networks and Technologies (ANT 2017):</strong> Toward Leveraging Smart Logistics Collaboration with a Multi-Agent System Based Solution</li>
+                </ul>
+            </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div id="certifications" class="mt-5">
+            <h3 class="section-title">Certifications</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Functional Programming with Scala Specialization - Coursera (2022) </li>
+                <li class="list-group-item">Deep Learning for Computer Vision with TensorFlow- Coursera (2022)</li>
+                <li class="list-group-item">Data Visualization with Tableau- Coursera (2022)</li>
+                <li class="list-group-item">IBM AI Engineering Specialization - Coursera (2020)</li>
+                <li class="list-group-item">SQL, NoSQL, Big Data and Hadoop - Udemy (2020)</li>
+                <li class="list-group-item">Data Science, Deep Learning and Machine Learning with Python - Coursera (2018)</li>
+                <li class="list-group-item">Certificate of Achievement in IELTS (International English Language Testing System)</li>
+                <li class="list-group-item">Java/JEE Development, Training Center Management Systems, Tunisia- 2018</li>
+                <li class="list-group-item">Personal Development, International Academy of Personal Training and Leadership -2015</li>
+                <li class="list-group-item">Personal Development, International Academy of Personal Training and Leadership -2013</li>
+                <li class="list-group-item">Mobile Applications Programming, Palace of Sciences Monastir Orange Tunisia - 2012</li>
+                <li class="list-group-item">Certificate of Achievement in TOEIC, AMIDEAST - 2011</li>
+
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="mt-5">
+            <h3 class="section-title">Contact Information</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Phone:</strong> +32 492 922 253 / +968 79 05 05 25</li>
+                <li class="list-group-item"><strong>Email:</strong> <a href="mailto:gharred.hana@gmail.com">gharred.hana@gmail.com</a>, <a href="mailto:hana.gharrad@uhasselt.be">hana.gharrad@uhasselt.be</a></li>
+                <li class="list-group-item"><strong>Address:</strong> Elfde Liniestraat, Hasselt 3500, Belgium</li>
+                <li class="list-group-item"><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Hana-Gharrad">View Profile</a></li>
+                <li class="list-group-item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/be/hana-gharrad/">View Profile</a></li>
+                <li class="list-group-item"><strong>ORCID:</strong> <a href="https://orcid.org/0000-0003-3914-4292">View ORCID</a></li>
+            </ul>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="mt-5 text-center">
+            <p>&copy; 2024 Hana Gharrad</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
