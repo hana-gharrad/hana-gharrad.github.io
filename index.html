@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
 
         .sidebar {
             position: fixed;
@@ -94,10 +94,12 @@ body {
             height: 1px;
             border-bottom: 1px dashed #ddd;
         }
+
         .content {
-            margin-left: 270px;
+            margin-left: 18%; /* Adjusted for mobile responsiveness */
             padding: 20px;
         }
+
         .profile-img {
             border-radius: 50%;
             width: 150px;
@@ -107,9 +109,61 @@ body {
             margin-right: auto;
             margin-bottom: 20px;
         }
+
         .section-title {
             color: #328ae8;
             margin-bottom: 1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                padding: 20px;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .sidebar ul li {
+                font-size: 14px;
+            }
+
+            .sidebar img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .sidebar h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .sidebar ul li {
+                font-size: 12px;
+            }
+
+            .sidebar img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .sidebar h3 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -117,7 +171,7 @@ body {
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <img src="https://media.licdn.com/dms/image/v2/C4D03AQEkptUeAeZ5fw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1662228758453?e=1732147200&v=beta&t=NQVC0Vu5ctBizXBOOoRLKy04fySaxO9QwlLCAr8jlVU" alt="Profile Image" class="profile-img">
+        <img src="https://i1.rgstatic.net/ii/profile.image/11431281098726216-1669063691961_Q512/Hana-Gharrad.jpg" alt="Profile Image" class="profile-img">
         <h3 class="text-center">Hana Gharrad</h3>
         <p class="text-center">Data Scientist & Software Engineer & Urban Mobility Researcher</p>
         <p>hana.gharrad@gmail.com</p>
