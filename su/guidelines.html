@@ -17,13 +17,43 @@
 <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
 <style>
+
+.hero-bg {
+    background-image: url("header2.png");
+    background-size: cover;        /* KEY: fills without distortion */
+    background-position: center;   /* keeps it centered */
+    background-repeat: no-repeat;
+
+    min-height: 30vh;             /* full screen height */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+      margin-bottom: 5px;
+}
+
+/* Optional overlay for readability */
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25); /* light overlay */
+}
+
+/* Ensure content stays above overlay */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 .map-responsive {
     position: relative;
     width: 100%;
     padding-bottom: 60%; /* aspect ratio */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(7, 165, 99, 0.1);
 }
 
 .map-responsive iframe {
@@ -38,6 +68,35 @@
     height: 420px;          
     object-fit: cover;      
     border-radius: 10px;
+}
+
+
+.single-blog-bg {
+    background-size: cover;
+    background-attachment: fixed;
+    height: 350px;
+    position: relative;    
+}
+.single-blog-bg:before{
+	content: '';
+	position: absolute;
+  display: flex;
+	left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom , #f6fff7 90%, rgb(255, 255, 255) 10%);
+  opacity: .5;
+}
+
+
+.logo {
+    height: 150px;     /* adjust as needed */
+    width: auto;
+}
+
+.header-title h1 {
+    font-size: 2rem;
 }
 </style>
 
@@ -55,6 +114,7 @@
 body {
     scroll-behavior: smooth;
     background: #f6fff7;
+    margin-top: 0px;
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -68,6 +128,7 @@ body {
     padding: 15px;
     border-radius: 12px 0 0 12px;
     z-index: 1000;
+  
 }
 .sidebar a {
     display: block;
@@ -85,11 +146,11 @@ body {
     padding: 80px 20px;
 }
 .title {
-    color: #1b5e20;
+    color: #0d0e0d;
     font-weight: 700;
 }
 .subtitle {
-    color: #388e3c;
+    color: #111312fb;
 }
 
 /* Cards */
@@ -117,72 +178,79 @@ body {
 
 <body>
 
+
 <!-- Sidebar -->
 <div class="sidebar">
     <a href="#info">Info</a>
     <a href="#programme">Programme</a>
     <a href="#map-section">Bike Tour Map</a> 
-    <a href="#id="directions"> Meetings Rooms</a>
+    <a href="#directions"> Meetings Rooms</a>
+    <a href="#selected-options">Food menu selected Options</a>
 </div>
 
 <!-- SECTION 1: PRACTICAL INFO -->
 <section id="info" class="section">
 <div class="container">
 
-<h1 class="title text-center">SMARTURBANITY GENERAL ASSEMBLY</h1>
-<h4 class="subtitle text-center mb-5">Lyon, France (09/04 - 10/04/2026)</h4>
+<section id="overview" class="hero-bg">
+
+  <div class="container text-center hero-content">
+
+    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mb-3">
+        <img src="SmartUrbanity.png" class="logo">
+        <h1 class="title m-0">SMARTURBANITY GENERAL ASSEMBLY</h1>
+    </div>
+
+    <h4 class="subtitle">Lyon, France (09/04 - 10/04/2026)</h4>
+
+  </div>
+
+</section>
 
 <div class="row g-4">
 
+  <div class="col-md-6 g-4">
 <!-- Venues -->
-<div class="col-md-6">
+<div class="col-md-12">
 <div class="card p-3">
 <h5>Meeting Venues</h5>
-<p><strong>09/04:</strong> Maison des Sciences de l'Homme<br>
+<p><strong>09/04:</strong> <a href="https://www.google.com/maps/place/Maison+des+Sciences+de+l'Homme/@45.7468701,4.8302702,845m/data=!3m3!1e3!4b1!5s0x47f4ea485ae1130b:0x3197d26cb59a1459!4m6!3m5!1s0x47f4ea4856cd8ee9:0x769df56da9a048a6!8m2!3d45.7468665!4d4.8351411!16s%2Fg%2F1tgp9mfx?entry=tts&g_ep=EgoyMDI2MDIxMS4wIPu8ASoASAFQAw%3D%3D&skid=64640f84-c916-4c40-82d4-14362fbbad1a" target="_blank">Maison des Sciences de l'Homme</a><br>
 Room: Marc Bloch</p>
 
-<p><strong>10/04:</strong> Maison des Sciences de l'Homme<br>
+<p><strong>10/04:</strong><a href="https://www.google.com/maps/place/Maison+des+Sciences+de+l'Homme/@45.7468701,4.8302702,845m/data=!3m3!1e3!4b1!5s0x47f4ea485ae1130b:0x3197d26cb59a1459!4m6!3m5!1s0x47f4ea4856cd8ee9:0x769df56da9a048a6!8m2!3d45.7468665!4d4.8351411!16s%2Fg%2F1tgp9mfx?entry=tts&g_ep=EgoyMDI2MDIxMS4wIPu8ASoASAFQAw%3D%3D&skid=64640f84-c916-4c40-82d4-14362fbbad1a" target="_blank">Maison des Sciences de l'Homme</a><br>
 Room: Elise Rivet</p>
 
 <p>📍 14 Av. Berthelot, 69007 Lyon</p>
 </div>
 </div>
 
+<!-- Dinner -->
+<div class="col-md-12" style="margin-top: 5px;">
+<div class="card p-3">
+<h5>Dinner</h5>
+<p><strong> <a href="https://www.brasseriegeorges.com/en/">Brasserie Georges</a></strong></p>
+<p>30 Cr de Verdun Perrache, Lyon</p>
+<p>Menus: <a href="#selected-options">selected options</a> </p>
+</div>
+</div>
+
 <!-- Online -->
-<div class="col-md-6">
+<div class="col-md-12" style="margin-top: 5px;">
 <div class="card p-3">
 <h5>Online Attendance</h5>
-<p>Microsoft Teams</p>
+<p><a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fmeet%2F38220979157185%3Fp%3DP42Rn7HMOOpalpz6PE%26anon%3Dtrue&type=meet&deeplinkId=1c16c517-0e82-4158-acf3-2b105d45e245&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank">Microsoft Teams</a></p>
 <p><strong>ID:</strong> 382 209 791 571 85</p>
 <p><strong>Passcode:</strong> SG7VV363</p>
 </div>
 </div>
 
-<!-- Dinner -->
-<div class="col-md-6">
-<div class="card p-3">
-<h5>Dinner</h5>
-<p><strong> <a href="https://www.brasseriegeorges.com/en/">Brasserie Georges</a></strong></p>
-<p>30 Cr de Verdun Perrache, Lyon</p>
-<p>Menus: To be confirmed</p>
-</div>
-</div>
 
-<!-- Hotels -->
-<div class="col-md-6">
-<div class="card p-3">
-<h5>Hotels</h5>
-<ul>
-<li>B&B HOTEL Lyon Centre Perrache</li>
-<li>MEININGER Hotel Lyon Centre Berthelot</li>
-<li>Lyon 2nd arrondissement recommended</li>
-</ul>
-</div>
-</div>
 
+</div>
+ <div class="col-md-6 g-4">
 <!-- Transport -->
-<div class="col-12">
-<div class="card p-4">
+<div class="col-md-12" style="margin-top: 5px;">
+<div class="card p-3">
 <h5>Transport</h5>
 
 <strong>From Airport (LYS)</strong>
@@ -202,9 +270,15 @@ Room: Elise Rivet</p>
 <li>Part-Dieu: Metro A/B, Tram T1/T3</li>
 <li>Perrache: Metro A/C, Tram T1/T2</li>
 </ul>
-
 <strong>By Car</strong>
 <p>Limited parking. €35–€45 / 24h</p>
+</div>
+</div>
+</div>
+
+
+
+
 
 </div>
 </div>
@@ -379,7 +453,27 @@ Room: Elise Rivet</p>
   </div>
 </div>
 
-</div>
+
+
+
+<!-- SECTION 5: MENU SELECTED OPTIONS -->
+<section id="selected-options" class="section">
+  <div class="container">
+
+    <h2 class="title text-center mb-4">Selected Menu Options</h2>
+
+    <div class="map-responsive">
+      <iframe 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288&amp;single=true&amp;widget=true&amp;headers=false">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
 
 </div>
