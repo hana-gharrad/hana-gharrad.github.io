@@ -506,6 +506,7 @@ Access Pictures Folder
 <script>
 function init() {
     const data = parseCSV(csv);
+    data.sort((a, b) => a.name.localeCompare(b.name));
     renderList(data);
 }
 </script>
