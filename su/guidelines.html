@@ -6,14 +6,40 @@
 <title>SMARTURBANITY General Assembly</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.custom-list {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
 
+.custom-item {
+
+}
+
+/* Hover effect */
+.custom-item:hover {
+    background-color: #89d1a5;
+} 
+
+.list-group-item.active {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+</style>
 <style>
 body {
     scroll-behavior: smooth;
     background: #f6fff7;
     font-family: 'Segoe UI', sans-serif;
 }
-
+title-section {
+    font-weight: 700;
+    color: #2e7d32;
+}
 /* HERO */
 .hero-bg {
     background-image: url("header2.png");
@@ -134,7 +160,7 @@ body {
 </style>
 </head>
 
-<body>
+<body onload="init()">
 
 <!-- Sidebar -->
 <div class="sidebar">
@@ -159,6 +185,8 @@ body {
 <!-- SECTION 1 -->
 <section id="info" class="section">
 <div class="container">
+    <h2 class="title-section text-center mb-4">Information</h2>
+
 <div class="row g-4">
 
 <div class="col-md-6">
@@ -174,7 +202,7 @@ body {
 <h5>Dinner</h5>
 <p><strong><a href="https://www.brasseriegeorges.com/en/">Brasserie Georges</a></strong></p>
 <p>30 Cr de Verdun Perrache, 69002 Lyon</p>
-<p>Menus: <a href="#selected-options">to be confirmed</a></p>
+<p>Menus: <a href="#selected-options">Check the selected options</a></p>
 </div>
 
 <div class="card p-3 mt-3">
@@ -213,6 +241,12 @@ body {
 <strong>By Car</strong>
 <p>Limited parking – €35–€45 / 24h</p>
 
+<strong>Public Transport in Lyon</strong>
+<ul>
+<li>Journey (valid 1 hour): ~2.10 € - Unlimited transfers (metro, tram, bus, funicular), Return trips allowed within the 1-hour window</li>
+<li>Short-term passes: 24h or 1-day passes: ~6-7 € , 7-day pass: from ~17.80 €</li>
+<li> Vélo'v pricing: Single ride ticket: ~1.80 €, Day pass: ~4 € / First 30 minutes are free</li>
+</ul>
 </div>
 </div>
 
@@ -223,7 +257,7 @@ body {
 <section id="programme" class="section bg-light">
 <div class="container">
 
-<h2 class="title text-center mb-5">Programme</h2>
+<h2 class="title-section text-center mb-5">Programme</h2>
 
 <div class="timeline">
 
@@ -359,7 +393,7 @@ body {
 <section id="map-section" class="section">
 <div class="container">
 
-<h2 class="title text-center mb-4">Bike Tour Map</h2>
+<h2 class="title-section text-center mb-4">Bike Tour Map</h2>
 
 <div class="map-responsive">
 <iframe src="https://www.google.com/maps/d/embed?mid=1y5fez27v7zwW3ZpVygvy1_dzbmrCf20"></iframe>
@@ -378,7 +412,7 @@ Open Full Map
 <section id="directions" class="section bg-light">
 <div class="container">
 
-<h2 class="title text-center mb-5">Directions for Meeting Rooms</h2>
+<h2 class="title-section  text-center mb-5">Directions for Meeting Rooms</h2>
 
 <div class="row g-4">
 
@@ -425,18 +459,35 @@ Open Full Map
 <section id="selected-options" class="section">
 <div class="container">
 
-<h2 class="title text-center mb-4">Selected Menu Options</h2>
+<h2 class="title-section text-center mb-4">Dinner</h2>
 
-<div class="map-responsive">
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288"></iframe>
+
+<!-- DROPDOWN -->
+<div >
+    <ul id="menu-list" class="list-group custom-list">
+    </ul>
 </div>
 
-<div class="text-center mt-3">
-<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288" target="_blank" class="btn btn-success">
-Open Full File
-</a>
+<!-- TABLE -->
+<div class="container details-box">
+    <table class="table table-bordered d-none" id="details-table">
+        <tbody>
+            <tr><th>Name</th><td id="d-name"></td></tr>
+            <tr><th>Entry</th><td id="d-starter"></td></tr>
+            <tr><th>Main Plate</th><td id="d-main"></td></tr>
+            <tr><th>Dessert</th><td id="d-dessert"></td></tr>
+        </tbody>
+    </table>
 </div>
 
+
+<script src="script.js"></script>
+<script>
+function init() {
+    const data = parseCSV(csv);
+    renderList(data);
+}
+</script>
 </div>
 </section>
 
