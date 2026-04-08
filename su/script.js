@@ -9,7 +9,7 @@ Golnoosh Ghiyaei,Onion soup,Honey and spiced pork ribs,Yes
 Valerio De Martinis,Lentil Salad,Salmon tournedos,Yes
 Lukas Barthelmes,Onion soup,Salmon tournedos,No
 Amir Sarrafzadeh,Lentil Salad,Honey and spiced pork ribs,Yes
-Stefanie Kern  (without Parmesan, please - it's not vegetarian),Butternut squash soup,Mushroom linguine,No
+Stefanie Kern  (without Parmesan, please - its not vegetarian),Butternut squash soup,Mushroom linguine,No
 Lory,Butternut squash soup,Beef Tartare,Yes
 Isabel Cunha,Onion soup,Salmon tournedos,No
 Ouassim Manout,Onion soup,Salmon tournedos,No
