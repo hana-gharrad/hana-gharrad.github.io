@@ -6,154 +6,51 @@
 <title>SMARTURBANITY General Assembly</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- LEAFLET CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-<!-- Leaflet -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<!-- Routing Machine (IMPORTANT) -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
-<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-
-<style>
-
-.hero-bg {
-    background-image: url("header2.png");
-    background-size: cover;        /* KEY: fills without distortion */
-    background-position: center;   /* keeps it centered */
-    background-repeat: no-repeat;
-
-    min-height: 30vh;             /* full screen height */
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-      margin-bottom: 5px;
-}
-
-/* Optional overlay for readability */
-.hero-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.25); /* light overlay */
-}
-
-/* Ensure content stays above overlay */
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-.map-responsive {
-    position: relative;
-    width: 100%;
-    padding-bottom: 60%; /* aspect ratio */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(7, 165, 99, 0.1);
-}
-
-.map-responsive iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.room-img {
-    width: 100%;
-    height: 420px;          
-    object-fit: cover;      
-    border-radius: 10px;
-}
-
-
-.single-blog-bg {
-    background-size: cover;
-    background-attachment: fixed;
-    height: 350px;
-    position: relative;    
-}
-.single-blog-bg:before{
-	content: '';
-	position: absolute;
-  display: flex;
-	left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom , #f6fff7 90%, rgb(255, 255, 255) 10%);
-  opacity: .5;
-}
-
-
-.logo {
-    height: 150px;     /* adjust as needed */
-    width: auto;
-}
-
-.header-title h1 {
-    font-size: 2rem;
-}
-</style>
-
-<style>
-#map {
-    height: 600px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.map-container {
-    padding: 60px 20px;
-}
-</style>
 <style>
 body {
     scroll-behavior: smooth;
     background: #f6fff7;
-    margin-top: 0px;
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background: #1b5e20;
-    padding: 15px;
-    border-radius: 12px 0 0 12px;
-    z-index: 1000;
-  
+/* HERO */
+.hero-bg {
+    background-image: url("header2.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
-.sidebar a {
-    display: block;
-    color: white;
-    margin: 10px 0;
-    text-decoration: none;
-    font-size: 14px;
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.3);
 }
-.sidebar a:hover {
-    text-decoration: underline;
+.hero-content { position: relative; z-index: 1; }
+
+/* TEXT */
+.title { font-weight: 700; }
+.subtitle { color: #333; }
+
+/* LOGO */
+.logo { height: 120px; }
+@media (max-width:768px){
+    .logo { height: 70px; }
+    .title { font-size: 1.3rem; }
 }
 
-/* Sections */
-.section {
-    padding: 80px 20px;
-}
-.title {
-    color: #0d0e0d;
-    font-weight: 700;
-}
-.subtitle {
-    color: #111312fb;
+/* SECTIONS */
+.section { padding: 80px 20px; }
+@media (max-width:768px){
+    .section { padding: 50px 15px; }
 }
 
-/* Cards */
+/* CARDS */
 .card {
     border: none;
     border-left: 5px solid #66bb6a;
@@ -161,124 +58,159 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Timeline */
-.timeline {
-    border-left: 3px solid #66bb6a;
-    padding-left: 20px;
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: #1b5e20;
+    padding: 12px;
+    border-radius: 12px 0 0 12px;
+    z-index: 1000;
 }
-.timeline-item {
-    margin-bottom: 25px;
+.sidebar a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    text-decoration: underline;
 }
-.time {
-    font-weight: bold;
-    color: #2e7d32;
+
+/* MOBILE NAV */
+@media (max-width:768px){
+    .sidebar{
+        top:auto;
+        bottom:0;
+        left:0;
+        right:0;
+        transform:none;
+        display:flex;
+        justify-content:space-around;
+        border-radius:0;
+    }
+    .sidebar a{ font-size:11px; margin:0;text-decoration: underline }
+}
+
+/* MAP */
+.map-responsive{
+    position:relative;
+    padding-bottom:60%;
+}
+.map-responsive iframe{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:0;
+}
+@media (max-width:768px){
+    .map-responsive{ padding-bottom:85%; }
+}
+
+/* IMAGES */
+.room-img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+@media (max-width:768px){
+    .room-img{ height:220px; }
+}
+
+/* TIMELINE */
+.timeline{
+    border-left:3px solid #66bb6a;
+    padding-left:20px;
+}
+.timeline-item{ margin-bottom:20px; }
+.time{ color:#2e7d32; font-weight:bold; }
+@media (max-width:768px){
+    .timeline{ border-left:none; padding-left:0; }
+    .timeline-item{
+        border-left:3px solid #66bb6a;
+        padding-left:10px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-
 <!-- Sidebar -->
 <div class="sidebar">
-    <a href="#info">Info</a>
-    <a href="#programme">Programme</a>
-    <a href="#map-section">Bike Tour Map</a> 
-    <a href="#directions"> Meetings Rooms</a>
-    <a href="#selected-options">Food menu selected Options</a>
+<a href="#info">Info</a>
+<a href="#programme">Programme</a>
+<a href="#map-section">Bike Tour Map</a>
+<a href="#directions">Meetings Rooms</a>
+<a href="#selected-options">Food menu selected Options</a>
 </div>
 
-<!-- SECTION 1: PRACTICAL INFO -->
-<section id="info" class="section">
-<div class="container">
-
-<section id="overview" class="hero-bg">
-
-  <div class="container text-center hero-content">
-
-    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mb-3">
-        <img src="SmartUrbanity.png" class="logo">
-        <h1 class="title m-0">SMARTURBANITY GENERAL ASSEMBLY</h1>
-    </div>
-
-    <h4 class="subtitle">Lyon, France (09/04 - 10/04/2026)</h4>
-
-  </div>
-
+<!-- HEADER -->
+<section class="hero-bg">
+<div class="hero-content text-center">
+<div class="d-flex justify-content-center align-items-center gap-3 flex-wrap mb-3">
+<img src="logo.PNG" class="logo">
+<h1 class="title m-0">SMARTURBANITY GENERAL ASSEMBLY</h1>
+</div>
+<h4 class="subtitle">Lyon, France (09/04 - 10/04/2026)</h4>
+</div>
 </section>
 
+<!-- SECTION 1 -->
+<section id="info" class="section">
+<div class="container">
 <div class="row g-4">
 
-  <div class="col-md-6 g-4">
-<!-- Venues -->
-<div class="col-md-12">
+<div class="col-md-6">
+
 <div class="card p-3">
 <h5>Meeting Venues</h5>
-<p><strong>09/04:</strong> <a href="https://www.google.com/maps/place/Maison+des+Sciences+de+l'Homme/@45.7468701,4.8302702,845m/data=!3m3!1e3!4b1!5s0x47f4ea485ae1130b:0x3197d26cb59a1459!4m6!3m5!1s0x47f4ea4856cd8ee9:0x769df56da9a048a6!8m2!3d45.7468665!4d4.8351411!16s%2Fg%2F1tgp9mfx?entry=tts&g_ep=EgoyMDI2MDIxMS4wIPu8ASoASAFQAw%3D%3D&skid=64640f84-c916-4c40-82d4-14362fbbad1a" target="_blank">Maison des Sciences de l'Homme</a><br>
-Room: Marc Bloch</p>
-
-<p><strong>10/04:</strong><a href="https://www.google.com/maps/place/Maison+des+Sciences+de+l'Homme/@45.7468701,4.8302702,845m/data=!3m3!1e3!4b1!5s0x47f4ea485ae1130b:0x3197d26cb59a1459!4m6!3m5!1s0x47f4ea4856cd8ee9:0x769df56da9a048a6!8m2!3d45.7468665!4d4.8351411!16s%2Fg%2F1tgp9mfx?entry=tts&g_ep=EgoyMDI2MDIxMS4wIPu8ASoASAFQAw%3D%3D&skid=64640f84-c916-4c40-82d4-14362fbbad1a" target="_blank">Maison des Sciences de l'Homme</a><br>
-Room: Elise Rivet</p>
-
+<p><strong>09/04:</strong> <a href="https://www.google.com/maps/place/Maison+des+Sciences+de+l'Homme/" target="_blank">Maison des Sciences de l'Homme</a><br>Room: Marc Bloch</p>
+<p><strong>10/04:</strong> <a href="https://www.google.com/maps/place/Maison+des+Sciences+de+l'Homme/" target="_blank">Maison des Sciences de l'Homme</a><br>Room: Elise Rivet</p>
 <p>📍 14 Av. Berthelot, 69007 Lyon</p>
 </div>
-</div>
 
-<!-- Dinner -->
-<div class="col-md-12" style="margin-top: 5px;">
-<div class="card p-3">
+<div class="card p-3 mt-3">
 <h5>Dinner</h5>
-<p><strong> <a href="https://www.brasseriegeorges.com/en/">Brasserie Georges</a></strong></p>
-<p>30 Cr de Verdun Perrache, Lyon</p>
-<p>Menus: <a href="#selected-options">selected options</a> </p>
-</div>
+<p><strong><a href="https://www.brasseriegeorges.com/en/">Brasserie Georges</a></strong></p>
+<p>30 Cr de Verdun Perrache, 69002 Lyon</p>
+<p>Menus: <a href="#selected-options">to be confirmed</a></p>
 </div>
 
-<!-- Online -->
-<div class="col-md-12" style="margin-top: 5px;">
-<div class="card p-3">
+<div class="card p-3 mt-3">
 <h5>Online Attendance</h5>
-<p><a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fmeet%2F38220979157185%3Fp%3DP42Rn7HMOOpalpz6PE%26anon%3Dtrue&type=meet&deeplinkId=1c16c517-0e82-4158-acf3-2b105d45e245&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank">Microsoft Teams</a></p>
+<p><a href="https://teams.microsoft.com/" target="_blank">Microsoft Teams Meeting</a></p>
 <p><strong>ID:</strong> 382 209 791 571 85</p>
 <p><strong>Passcode:</strong> SG7VV363</p>
 </div>
-</div>
-
-
 
 </div>
- <div class="col-md-6 g-4">
-<!-- Transport -->
-<div class="col-md-12" style="margin-top: 5px;">
+
+<div class="col-md-6">
 <div class="card p-3">
+
 <h5>Transport</h5>
 
 <strong>From Airport (LYS)</strong>
 <ul>
-<li>Rhône Express: €28 round trip</li>
-<li>30 min – every 15 min</li>
+<li>Rhône Express: €28 (round trip)</li>
+<li>Journey time: 30 minutes</li>
+<li>Frequency: every 15 minutes</li>
 </ul>
 
 <strong>Taxi / Uber</strong>
 <ul>
-<li>€40–€50</li>
-<li>30–40 minutes</li>
+<li>Estimated fare: €40–€50</li>
+<li>Travel time: 30–40 minutes</li>
 </ul>
 
 <strong>Train Stations</strong>
 <ul>
-<li>Part-Dieu: Metro A/B, Tram T1/T3</li>
-<li>Perrache: Metro A/C, Tram T1/T2</li>
+<li>Part-Dieu: Metro (A/B), Tram (T1, T3)</li>
+<li>Perrache: Metro (A/C), Tram (T1, T2)</li>
 </ul>
+
 <strong>By Car</strong>
-<p>Limited parking. €35–€45 / 24h</p>
-</div>
-</div>
-</div>
-
-
-
-
+<p>Limited parking – €35–€45 / 24h</p>
 
 </div>
 </div>
@@ -287,7 +219,7 @@ Room: Elise Rivet</p>
 </div>
 </section>
 
-<!-- SECTION 2: PROGRAMME -->
+<!-- PROGRAMME -->
 <section id="programme" class="section bg-light">
 <div class="container">
 
@@ -295,111 +227,44 @@ Room: Elise Rivet</p>
 
 <div class="timeline">
 
-<!-- DAY 1 -->
-<h4 class="subtitle">09 April 2026</h4>
+<h4>09 April 2026</h4>
 
-<div class="timeline-item">
-<span class="time">09:30 - 10:00</span>
-<p>Arrivals & Welcoming Coffee</p>
-</div>
+<div class="timeline-item"><span class="time">09:30 - 10:00</span><p>Arrivals & Welcoming Coffee</p></div>
+<div class="timeline-item"><span class="time">10:00 - 10:30</span><p>Welcome and Opening Remarks</p></div>
+<div class="timeline-item"><span class="time">11:10 - 11:30</span><p>Coffee Break</p></div>
+<div class="timeline-item"><span class="time">13:00 - 14:30</span><p>Lunch Break</p></div>
+<div class="timeline-item"><span class="time">19:30 - 23:00</span><p>Consortium Dinner</p></div>
 
-<div class="timeline-item">
-<span class="time">10:00 - 10:30</span>
-<p>Welcome and Opening Remarks</p>
-<ul>
-<li>Host – ENTPE</li>
-<li>Coordinator – Guido Gentile</li>
-</ul>
-</div>
+<h4 class="mt-4">10 April 2026</h4>
 
-<div class="timeline-item">
-<span class="time">10:30 - 11:10</span>
-<p>Project Status (WP1 & WP2)</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">11:10 - 11:30</span>
-<p>Coffee Break</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">12:00 - 13:00</span>
-<p>Applications & Dissemination + Q&A</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">13:00 - 14:30</span>
-<p>Consortium Picture & Lunch</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">15:30 - 17:15</span>
-<p>Pilot Sessions, Roadmaps, Closing</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">19:30 - 23:00</span>
-<p>Consortium Dinner</p>
-</div>
-
-<!-- DAY 2 -->
-<h4 class="subtitle mt-5">10 April 2026</h4>
-
-<div class="timeline-item">
-<span class="time">09:30 - 12:00</span>
-<p>WP2 Conclusion & Outcomes</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">12:00 - 14:00</span>
-<p>Lunch Break</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">14:00 - 16:30</span>
-<p>Technical Pilot Visit (Bike)</p>
-</div>
-
-<div class="timeline-item">
-<span class="time">16:30 - 17:00</span>
-<p>Closing Remarks (City Centre)</p>
-</div>
+<div class="timeline-item"><span class="time">09:30 - 12:00</span><p>WP2 Conclusion</p></div>
+<div class="timeline-item"><span class="time">14:00 - 16:30</span><p>Technical Pilot Visit</p></div>
+<div class="timeline-item"><span class="time">16:30 - 17:00</span><p>Closing Remarks</p></div>
 
 </div>
-
 </div>
 </section>
 
-<!-- SECTION 3: BIKE TOUR-->
+<!-- MAP -->
 <section id="map-section" class="section">
-  <div class="container">
+<div class="container">
 
-    <h2 class="title text-center mb-4">Bike Tour Map</h2>
+<h2 class="title text-center mb-4">Bike Tour Map</h2>
 
-    <div class="map-responsive">
-      <iframe 
-        src="https://www.google.com/maps/d/embed?mid=1y5fez27v7zwW3ZpVygvy1_dzbmrCf20&ehbc=2E312F"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-
-  </div>
-</section>
-
-
+<div class="map-responsive">
+<iframe src="https://www.google.com/maps/d/embed?mid=1y5fez27v7zwW3ZpVygvy1_dzbmrCf20"></iframe>
+</div>
 
 <div class="text-center mt-3">
-  <a href="https://www.google.com/maps/d/u/0/viewer?mid=1y5fez27v7zwW3ZpVygvy1_dzbmrCf20" 
-     target="_blank" 
-     class="btn btn-success">
-     Open Full Map
-  </a>
+<a href="https://www.google.com/maps/d/u/0/viewer?mid=1y5fez27v7zwW3ZpVygvy1_dzbmrCf20" target="_blank" class="btn btn-success">
+Open Full Map
+</a>
 </div>
 
+</div>
+</section>
 
-
-
+<!-- ROOMS -->
 <section id="directions" class="section bg-light">
 <div class="container">
 
@@ -407,82 +272,44 @@ Room: Elise Rivet</p>
 
 <div class="row g-4">
 
-<!-- Room 1 -->
 <div class="col-md-6">
-  <div class="card p-3 h-100">
-
-    <img src="Plan_MarcBloch.jpg" class="img-fluid rounded mb-3 room-img " alt="Marc Bloch Room">
-
-    <h5>Room: Marc Bloch</h5>
-    <p><strong>Date:</strong> 09 April 2026</p>
-
-    <p>
-      Maison des Sciences de l'Homme<br>
-      14 Avenue Berthelot, Lyon 7
-    </p>
-
-    <ul>
-      <li>Located on the main floor</li>
-      <li>Follow signage inside the building</li>
-    </ul>
-
-  </div>
+<div class="card p-3">
+<img src="Plan_MarcBloch.jpg" class="room-img mb-3">
+<h5>Room: Marc Bloch</h5>
+<p>Main floor</p>
+</div>
 </div>
 
-<!-- Room 2 -->
 <div class="col-md-6">
-  <div class="card p-3 h-100">
-
-    <img src="EliseRivet.png" class="img-fluid rounded mb-3 room-img " alt="Elise Rivet Room">
-
-    <h5>Room: Elise Rivet</h5>
-    <p><strong>Date:</strong> 10 April 2026</p>
-
-    <p>
-      Maison des Sciences de l'Homme<br>
-      14 Avenue Berthelot, Lyon 7
-    </p>
-
-    <ul>
-      <li>Upper floor (follow internal signage)</li>
-      <li>Staff will guide participants</li>
-      <li>Same building as Day 1</li>
-    </ul>
-
-
-  </div>
+<div class="card p-3">
+<img src="EliseRivet.png" class="room-img mb-3">
+<h5>Room: Elise Rivet</h5>
+<p>Upper floor</p>
+</div>
 </div>
 
-
-
-
-<!-- SECTION 5: MENU SELECTED OPTIONS -->
-<section id="selected-options" class="section">
-  <div class="container">
-
-    <h2 class="title text-center mb-4" style="min-height: 200px";>Selected Menu Options</h2>
-
-    <div class="map-responsive">
-      <iframe 
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288&amp;single=true&amp;widget=true&amp;headers=false">
-      </iframe>
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
 
+<!-- MENU -->
+<section id="selected-options" class="section">
+<div class="container">
+
+<h2 class="title text-center mb-4">Selected Menu Options</h2>
+
+<div class="map-responsive">
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288"></iframe>
+</div>
 
 <div class="text-center mt-3">
-  <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288&single=true" 
-     target="_blank" 
-     class="btn btn-success">
-     Open Full File
-  </a>
+<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_OHPHh422U8WfFLx69_Vk3YWiu-TrSOHy5HtRmP3ScZlslnikOTmnX7PT4m_vAA/pubhtml?gid=373345288" target="_blank" class="btn btn-success">
+Open Full File
+</a>
 </div>
-
-
 
 </div>
 </section>
+
 </body>
 </html>
