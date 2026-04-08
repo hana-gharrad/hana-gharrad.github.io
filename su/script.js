@@ -1,7 +1,7 @@
 let data = [];
 
 const csv = `name,starter,main_dish ,dessert 
-Domokos Eszterga¡r-Kiss,Onion soup,Black pudding shepherd's pie,Yes
+Domokos Domokos Esztergár-Kiss,Onion soup,Black pudding shepherd's pie,Yes
 Hana Gharrad,Lentil Salad,Salmon tournedos,Yes
 Maria Vittoria Ballirano ,Butternut squash soup,Quenelle,No
 Louafi Bouzouina,Lentil Salad,Skate wing,Yes
@@ -9,7 +9,7 @@ Golnoosh Ghiyaei,Onion soup,Honey and spiced pork ribs,Yes
 Valerio De Martinis,Lentil Salad,Salmon tournedos,Yes
 Lukas Barthelmes,Onion soup,Salmon tournedos,No
 Amir Sarrafzadeh,Lentil Salad,Honey and spiced pork ribs,Yes
-"Stefanie Kern  (without Parmesan, please - it's not vegetarian)",Butternut squash soup,Mushroom linguine,No
+Stefanie Kern  (without Parmesan, please - it's not vegetarian),Butternut squash soup,Mushroom linguine,No
 Lory,Butternut squash soup,Beef Tartare,Yes
 Isabel Cunha,Onion soup,Salmon tournedos,No
 Ouassim Manout,Onion soup,Salmon tournedos,No
